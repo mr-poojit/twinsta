@@ -1,0 +1,125 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 33% 98%;
+    --foreground: 240 10% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 20%;
+
+    --primary: 334 85% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 334 20% 92%;
+    --secondary-foreground: 240 10% 20%;
+
+    --muted: 334 20% 92%;
+    --muted-foreground: 240 5% 50%;
+
+    --accent: 334 100% 94%;
+    --accent-foreground: 240 10% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 334 30% 86%;
+    --input: 334 30% 86%;
+    --ring: 334 70% 75%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 10%;
+    --foreground: 0 0% 90%;
+
+    --card: 240 10% 15%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 240 10% 15%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: 334 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 10% 20%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 240 10% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 334 50% 50%;
+    --accent-foreground: 0 0% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 90%;
+
+    --border: 240 10% 25%;
+    --input: 240 10% 25%;
+    --ring: 334 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-typewriter bg-retro-texture;
+  }
+}
+
+@layer components {
+  .retro-border {
+    @apply border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .retro-button {
+    @apply bg-retro-pink text-white py-2 px-4 rounded retro-border hover:translate-y-0.5 hover:translate-x-0.5 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all active:translate-y-1 active:translate-x-1 active:shadow-none;
+  }
+
+  .retro-input {
+    @apply bg-white border-2 border-black rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-retro-pink;
+  }
+
+  .retro-card {
+    @apply bg-white rounded retro-border p-4;
+  }
+
+  .pixel-corners {
+    @apply relative;
+    clip-path: polygon(
+      0px 4px,
+      4px 4px, 
+      4px 0px,
+      calc(100% - 4px) 0px,
+      calc(100% - 4px) 4px,
+      100% 4px,
+      100% calc(100% - 4px),
+      calc(100% - 4px) calc(100% - 4px),
+      calc(100% - 4px) 100%,
+      4px 100%,
+      4px calc(100% - 4px),
+      0px calc(100% - 4px)
+    );
+  }
+}
